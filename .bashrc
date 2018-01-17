@@ -84,64 +84,14 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-#export JAVA_HOME=/home/tongust/software/jdk1.8.0_121
-#export PATH=$PATH:/home/tongust/software/jdk1.8.0.0_121/bin
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
-alias tp='top -u tongust'
-alias les='less -S'
-alias le='less -SN'
-alias vb='vi ~/.bashrc'
-alias vs='source ~/.bashrc'
-alias du='du -h --max-depth=1'
-alias wl='wc -l'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias lll='ll -h'
-alias py='python '
-alias cpHf2Sf='sh /home/tongust/software/script/cpHost2Serve.sh '
-alias cpHd2Sd='sh /home/tongust/software/script/cpHostdir2Servedir.sh '
-alias cpSf2Hf='sh /home/tongust/software/script/cpServe2Host.sh '
-alias cpSd2Hd='sh /home/tongust/software/script/cpServedir2Hostdir.sh '
-alias loginserve='sh /home/tongust/loginseu.sh'
-alias sbwt='cd ~/Program/cpp/sbwt/sbwa/'
-alias sbwtIndex='cd ~/Program/cpp/sbwt/sbwa-buildIndex/'
-alias clc='tput reset'
-alias notebook='cd ~/Desktop/notebook/'
-alias notecpp='cd ~/Desktop/notebook/cpp/;vi cpp.tex'
-alias notevi='cd ~/Desktop/notebook/vim/;vi vim.tex'
-alias notelinux='cd ~/Desktop/notebook/linux/;vi linux.tex'
-alias notelatex='cd ~/Desktop/notebook/latex/;vi latex.tex'
-alias vibash='vi ~/.bashrc'
-alias srcbash='source ~/.bashrc'
-alias notepython='cd ~/Desktop/notebook/python/;vi python.tex'
-alias mltitanic='cd /home/tongust/Desktop/kaggle/titanic/script;jupyter notebook;xdg-open http://localhost:8888/notebooks/Desktop/kaggle/titanic/script/main.ipynb'
-alias renetwork='sudo service network-manager restart'
-alias program='cd /home/tongust/Desktop/programming'
-alias ipythonspark='ipython=1 IPYTHON_OPTS=--\"pylab\" /opt/spark/spark-1.6.0/bin/pyspark'
-alias tlpi='cd /home/tongust/Desktop/notebook/books/tlpi'
-alias esl='cd /home/tongust/Desktop/notebook/books/esl/'
-alias g++11='g++ -std=c++11 -o main'
-alias linkexternal='/home/tongust/software/ngrok tcp 22'
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/config_ubuntu/bash/.bash_aliases ]; then
+    . ~/config_ubuntu/bash/.bash_aliases
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -154,35 +104,16 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-#export SCALA_HOME=/usr/local/src/scala/scala-2.10.4
-#export PATH=$SCALA_HOME/bin:$PATH
-export JAVA_HOME=/opt/jvm/jdk1.8.0_121
-export JRE_HOME=${JAVA_HOME}/jre  
-export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib  
-export PATH=${JAVA_HOME}/bin:${JRE_HOME}/bin:$PATH  
-  
-export SCALA_HOME=/opt/scala/scala-2.10.6  
-export PATH=${SCALA_HOME}/bin:$PATH  
-  
-export SPARK_HOME=/opt/spark/spark-1.6.0  
-  
-export PYTHONPATH=/opt/spark/spark-1.6.0/python
-# Add CUDA bin & library paths:
-export PATH=/usr/local/cuda/bin:/opt/scala/scala-2.10.6/bin:/opt/jvm/jdk1.8.0_121/bin:/opt/jvm/jdk1.8.0_121/jre/bin:/opt/scala/scala-2.10.6/bin:/opt/jvm/jdk1.8.0_121/bin:/opt/jvm/jdk1.8.0_121/jre/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/tongust/software/jdk1.8.0.0_121/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda/lib:$LD_LIBRARY_PATH
-export PYTHONPATH=~/Downloads/caffe/python/:/opt/spark/spark-1.6.0/python
-export LD_LIBRARY_PATH=/home/tongust/lib/archive:/home/tongust/lib/share:$LD_LIBRARY_PATH
-#export COMPILER_PATH=/home/tongust/Desktop/notebook/books/tlpi/tlpi-dist/lib:$COMPILER_PATH
 
 #################################
 #
 # prompt style and ls colors
 #
 #################################
-export PS1="\\[\e[0;32m[\\]\u \t]\w\$ \\[\e[m\\]"
+#export PS1="\\[\e[0;32m[\\]\u \t]\w\\n$ \\[\e[m\\]"
 # Colors ls colors
-LS_COLORS='di=1;31:fi=32:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=93:*.rpm=90'
-export LS_COLORS
+#LS_COLORS='di=1;31:fi=32:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=93:*.rpm=90'
+#export LS_COLORS
 #di = directory
 #fi = file
 #ln = symbolic link
@@ -228,3 +159,8 @@ export LS_COLORS
 # 104 = light blue background
 # 105 = light purple background
 # 106 = turquoise background
+export LS_COLORS='rs=0:di=35:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30:ow=1;31:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:*.txt*=33:'
+
+
+export CLICOLOR=1
+export PS1="\\[\e[0;33m\\]\u@\u\t \w \n$\\[\e[m\\]"
